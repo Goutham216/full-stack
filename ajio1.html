@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJIO Clone</title>
+    <link rel="stylesheet" href="ajio1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AJIO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">KIDS</a></li>
+                <li><a href="#">HOME & KITCHEN</a></li>
+            </ul>
+        </nav>
+        <div class="search-cart">
+            <div class="search">
+                <input type="text" placeholder="Search for products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="swiper mySwiper  ">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="banner1.jpeg" alt="Banner 1" class="pics"></div>
+      <div class="swiper-slide"><img src="banner2.jpeg" alt="Banner 2" class="pics"></div>
+      <div class="swiper-slide"><img src="banner3.jpeg" alt="Banner 3" class="pics"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+     
+
+        <section class="products">
+            <h2>TRENDING NOW</h2>
+            <div class="product-grid" id="productGrid">
+            </div>
+        </section>
+    </main>
+
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h3>Your Shopping Bag</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <h4>Total: ₹<span id="cartTotal">0</span></h4>
+                </div>
+                <button class="checkout-btn">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Order Placed Successfully!</h3>
+            <p>Thank you for shopping with AJIO. Your order has been placed.</p>
+            <button class="continue-shopping-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CUSTOMER SERVICE</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>FOLLOW US</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AJIO . All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="ajio1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Checkout Page (hidden by default) -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <button class="close-checkout"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="checkout-content">
+                <div class="checkout-items">
+                    <h4>Your Order</h4>
+                    <div class="checkout-items-list" id="checkoutItemsList">
+                        <!-- Cart items will be displayed here -->
+                    </div>
+                    <div class="checkout-total">
+                        <h4>Total: ₹<span id="checkoutTotal">0</span></h4>
+                    </div>
+                </div>
+                <div class="checkout-form">
+                    <h4>Shipping Information</h4>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Shipping Address</label>
+                            <textarea id="address" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment">Payment Method</label>
+                            <select id="payment" required>
+                                <option value="">Select payment method</option>
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="cod">Cash on Delivery</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="place-order-btn">PLACE ORDER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal (hidden by default) -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Order Placed Successfully!</h3>
+            <p>Thank you for shopping with AJIO. Your order has been placed.</p>
+            <button class="continue-shopping-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+</body>
+</html>
